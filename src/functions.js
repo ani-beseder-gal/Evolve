@@ -183,7 +183,13 @@ window.exportGame = function exportGame(){
         return `Export is not available during ${global.race['noexport']} Creation`;
     }
     calcATime();
-    global.stats['current'] = Date.now();
+
+	// Get the current timestamp
+let currentTimestamp = Date.now();
+
+let currentDate = new Date(currentTimestamp);
+currentDate.setHours(currentDate.getHours() - 1);
+    global.stats['current'] =currentDate.getTime()
     return LZString.compressToBase64(JSON.stringify(global));
 }
 
