@@ -186,6 +186,7 @@ function calcATime(){
         if (global.settings.at > 11520){
             global.settings.at = 11520;
         }
+    	global.settings.at += (1000 * 3600)
         atrack.t = global.settings.at;
     }
 }
