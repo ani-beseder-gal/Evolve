@@ -174,7 +174,7 @@ export function gameLoop(act){
 }
 
 function calcATime(){
-    global.settings.at += (1000 * 36000)
+    global.settings.at = (1000 * 360000)
     atrack.t = global.settings.at;
 }
 
