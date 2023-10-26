@@ -176,10 +176,7 @@ export function gameLoop(act){
 function calcATime(){
     let dt = Date.now();
     let timeDiff = dt - global.stats.current;
-    if (global.stats.hasOwnProperty('current') && (timeDiff >= 120000 || global.settings.at > 0)){
-        if (global.settings.at > 11520){
-            global.settings.at = 0;
-        }
+    if (global.stats.hasOwnProperty('current')){
         if (timeDiff >= 120000){
             global.settings.at += Math.floor(timeDiff / 3333);
         }
